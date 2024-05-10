@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon-C49brna2.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jeff's Website</title>
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.1/css/all.css">
+    <style>
+      body {
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        height: 100vh;
+        text-align: center;
+      }
+
+      .tv-container {
+        position: relative;
+        overflow: hidden;
+
+      }
+
+      .tv-image {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+      }
+
+      .tv-video {
+        position: absolute;
+        top: 10px;
+        right: -100px;
+        z-index: -1;
+      }
+
+      .image-button {
+        background: none;
+        border: none;
+        padding: 0;
+        position: relative;
+        width: 100px;
+        height: 100px;  
+        }
+
+  </style>
+    <script type="module" crossorigin src="/assets/index-Jujq485j.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-BD4uLkru.css">
+  </head>
+  <body>
+    <video src="/assets/1-Co9xyH2l.mp4"></video>
+    <video src="/assets/2-ClwaoOce.mp4"></video>
+    <video src="/assets/3-CwKv6gHL.mov"></video>
+    <video src="/assets/4-BQXCorc-.mov"></video>
+    <video src="/assets/5-Ny20Xtz_.mov"></video>
+    <video src="/assets/6-D2W3WFi-.mov"></video>
+    <video src="/assets/7-C8JGTpO_.mov"></video>
+    <video src="/assets/8-sqxwPv2j.mov"></video>
+    <video src="/assets/9-Bt92duSj.mov"></video>
+    <video src="/assets/10-CNKEI9Pw.mov"></video>
+    <video src="/assets/11-CJFNFt79.mov"></video>
+    <video src="/assets/12-DpTJFSao.mp4"></video>
+
+    <div class="tv-container">
+      <div class="tv-image"><img src="tv/tv.png"></div>
+      <div class="tv-video"><video autoplay loop muted id="videoPlayer"></div>
+        <div>
+          <button class="image-button" onclick="togglePlayPause()">
+            <img id="playPauseImage" src="tv/play.png">
+          </button>
+  
+          <button class="image-button" onclick="changeVideo()">
+            <img src="tv/next.png">
+          </button>
+  
+          <button class="image-button" onclick="toggleMute()">
+            <img id="muteUnmuteImage" src="tv/mute.png">
+          </button>
+        </div>
+    </div>
+  <script>
+    var video = document.getElementById('videoPlayer');
+    var playPauseImage = document.getElementById('playPauseImage');
+    var muteUnmuteImage = document.getElementById('muteUnmuteImage');
+    const videos = [
+    'assets/1.mp4',
+    'assets/2.mp4',
+    'assets/3.mov',
+    'assets/4.mov',
+    'assets/5.mov',
+    'assets/6.mov',
+    'assets/7.mov',
+    'assets/8.mov',
+    'assets/9.mov',
+    'assets/10.mov',
+    'assets/11.mov',
+    'assets/12.mp4',
+  ];
+
+    function togglePlayPause() {
+        if (video.paused) {
+            video.play();
+            playPauseImage.src = 'tv/play.png';
+        } else {
+            video.pause();
+            playPauseImage.src = 'tv/pause.png';
+        }
+    }
+    
+    var lastVideoIndex = -1;
+
+    function changeVideo() {
+      var randomIndex;
+        do {
+            randomIndex = Math.floor(Math.random() * videos.length);
+        } while (randomIndex === lastVideoIndex);
+
+        lastVideoIndex = randomIndex;
+        video.src = videos[randomIndex];
+        video.style.width = 990 + 'px';
+        video.style.height = 440 + 'px';
+        video.load();
+        video.play();
+    }
+
+    function toggleMute() {
+        video.muted = !video.muted;
+        muteUnmuteImage.src = video.muted ? 'tv/mute.png' : 'tv/unmute.png';
+    }
+    
+    changeVideo()
+  </script>
+    <canvas id="bg"></canvas>   
+
+    <main>
+
+      <header>
+        <h1>Jeff Delaney</h1>
+        <p>🚀 Welcome to my website!</p>
+      </header>
+      <img src="/assets/moon-RRPljFYe.jpg">
+      <video src="/assets/1-Co9xyH2l.mp4" controls></video>
+
+
+      <blockquote>
+        <p>I like making stuff and putting it on the internet</p>
+      </blockquote>
+
+      <section>
+        <h2>📜 Manifesto</h2>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+
+      </section>
+
+      <section class="light">
+        <h2>👩🏽‍🚀 Projects</h2>
+
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+
+        <h2>🏆 Accomplishments</h2>
+
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+
+      </section>
+
+      <blockquote>
+        <p>The best way out is always through <br>-Robert Frost</p>
+      </blockquote>
+
+      <section class="left">
+        <h2>🌮 Work History</h2>
+
+        <h3>McDonalds</h3>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+        <h3>Burger King</h3>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+        <h3>Taco Bell</h3>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+
+      </section>
+
+      <blockquote>
+        <p>Thanks for watching!</p>
+      </blockquote>
+
+
+    </main>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </body>
+</html>
